@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CineTrivia</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="app.js"></script>
+    <!--Enlace a libreria de bootstrap para estilos -->
+  </head>
+  <body>
+    <div class="container" id="entrada" style='display:block';>
+      <h1>Bienvenid@ a CineTrivia</h1>
+      <p>Ingresa tu Nombre: </p>
+      <form id="form1">
+      <input type="text" name="name" required ><br><em id="mensajeerror"></em>
+      <br><br>
+      </form>
+      <input type="button" class="buttonb" value="Iniciar" onclick='CheckValidation()'>
+    </div>
+    <!-- Llamada de Función Js para Saludo y Nombre -->
+    <div id='categorias' style='display:none';>
+    </div>
+    <!-- Mostrar Botones de categorias al mismo tiempo que el Saludo -->
+    <div id="elegirCategorias" style='display:none';>
+      <h3>Prueba tus conocimientos acerca del Cine <br>Elige una categoría para comenzar a Jugar</h3><br>
+      <input type="button" class="buttonInternacional" value='Internacional' onclick="mostrarInter()">
+      <input type="button" class="buttonNacional" value="Nacional" onclick="mostrarNac()">
+    </div>
+    <!-- Mostrar Primera pregunta Internacional-->
+    <div id='triviaInter1' style='display:none';>
+      <form name='triviaInter1'>
+        <h1>Cine Internacional</h1>
+        <p>1) ¿Cuál fue el primer James Bond del cine?</p>
+        <input type="radio" name="question1" value="Barry Nelson">Barry Nelson<br>
+        <input type="radio" name="question1" value="David Niven">David Niven<br>
+        <input type="radio" name="question1" value="Sean Connery">Sean Connery<br><br>
+        <input type="button" class="buttonInternacional" value="Siguiente Pregunta" onclick="resultIntQ1()">
+      </form>
+    </div>
+    <!-- Mostrar Segunda pregunta Internacional-->
+    <div id='triviaInter2' style='display:none';>
+      <form name='triviaInter2'>
+        <h1>Cine Internacional</h1>
+        <p>2) ¿En qué año se estrenó Titanic?</p>
+        <input type="radio" name="question2" value="2001">2001<br>
+        <input type="radio" name="question2" value="1997">1997<br>
+        <input type="radio" name="question2" value="1920">1920<br><br>
+        <input type="button" class="buttonInternacional" value="Siguiente Pregunta" onclick="resultIntQ2()">
+      </form>
+    </div>
+    <!-- Mostrar Tercera pregunta Internacional-->
+    <div id='triviaInter3' style='display:none';>
+      <form name='triviaInter3'>
+        <h1>Cine Internacional</h1>
+        <p>3) ¿Cuál es el actor principal de la saga Rambo?</p>
+        <input type="radio" name="question3" value="Sylvester Stallone">Sylvester Stallone<br>
+        <input type="radio" name="question3" value="Jean-Claude Van Damme">Jean-Claude Van Damme<br>
+        <input type="radio" name="question3" value="Arnold Schwarzenegger">Arnold Schwarzenegger<br><br>
+        <input type="button" class="buttonInternacional" value="Siguiente Pregunta" onclick="resultIntQ3()">
+      </form>
+    </div>
+<!-- Mostrar Primera pregunta Nacional-->
+    <div id='triviaNac1' style='display:none';>
+      <form name='triviaNac1'>
+        <h1>Cine Nacional</h1>
+        <p>1) ¿Como se llama el personaje de Daniela Vega el la película Una Mujer Fantástica?</p>
+        <input type="radio" name="question1" value="Maria Vidal">Maria Vidal<br>
+        <input type="radio" name="question1" value="Marina Vidal">Marina Vidal<br>
+        <input type="radio" name="question1" value="Mariana Vidal">Mariana Vidal<br><br>
+        <input type="button" class="buttonNacional" value="Siguiente Pregunta" onclick="resultNacQ1()">
+      </form>
+    </div>
+    <!-- Mostrar Segunda pregunta Nacional-->
+    <div id='triviaNac2' style='display:none';>
+      <form name='triviaNac2'>
+        <h1>Cine Nacional</h1>
+        <p>2) ¿Quién es el director de la película Machuca(2004)?</p>
+        <input type="radio" name="question2" value="Sebastián Lelio">Sebastián Lelio<br>
+        <input type="radio" name="question2" value="Pablo Larraín ">Pablo Larraín <br>
+        <input type="radio" name="question2" value="Andrés Wood">Andrés Wood<br><br>
+        <input type="button" class="buttonNacional" value="Siguiente Pregunta" onclick="resultNacQ2()">
+      </form>
+    </div>
+    <!-- Mostrar Tercera pregunta Nacional-->
+    <div id='triviaNac3' style='display:none';>
+      <form name='triviaNac3'>
+        <h1>Cine Nacional</h1>
+        <p>3) ¿Quién es la protagonista de La Nana?</p>
+        <input type="radio" name="question3" value="Catalina Saavedra">Catalina Saavedra<br>
+        <input type="radio" name="question3" value="Claudia Celedón">Claudia Celedón<br>
+        <input type="radio" name="question3" value="Delfina Guzmán">Delfina Guzmán<br><br>
+        <input type="button" class="buttonNacional" value="Siguiente Pregunta" onclick="resultNacQ3()">
+      </form>
+    </div>
+    <!-- Resultados Internacional-->
+    <div id='resultInter' style='display:none';>
+      <h1>Cine Internacional <br> Resultados...</h1>
+      <p>1) ¿Cuál fue el primer James Bond del cine?</p>
+      <ul id=interul>
+        <li name=int1 class="text-danger" value="Barry Nelson">Barry Nelson</li>
+        <li name=int1 class="text-danger" value="David Niven">David Niven</li>
+        <li name=int1 class="text-success" value="Sean Connery">Sean Connery</li>
+      </ul>
+      <p>2) ¿En qué año se estrenó Titanic?</p>
+      <ul id=int2>
+        <li class="text-danger">2001</li>
+        <li class="text-success">1997</li>
+        <li class="text-danger">1920</li>
+      </ul>
+      <p>3) ¿Cuál es el actor principal de la saga Rambo?</p>
+      <ul id=int3>
+        <li class="text-success">Sylvester Stallone</li>
+        <li class="text-danger">Jean-Claude Van Damme</li>
+        <li class="text-danger">Arnold Schwarzenegger</li>
+      </ul><br>
+      <p id="counterInt"></p><br>
+      <a type="button" class="buttonb" onclick="guardarInt()">Volver a Jugar</a>
+      <a type="button" class="buttonb" href=index.html>Salir</a>
+    </div>
+    <!-- Resultados Nacional-->
+    <div id='resultNac' style='display:none';>
+      <h1>Cine Nacional <br> Resultados...</h1>
+      <p>1) ¿Como se llama el personaje de Daniela Vega el la película Una Mujer Fantástica?</p>
+      <ul>
+        <li class="text-danger">Maria Vidal</li>
+        <li class="text-success">Marina Vidal</li>
+        <li class="text-danger">Mariana Vidal</li>
+      </ul>
+      <p>2) ¿Quién es el director de la película Machuca(2004)?</p>
+      <ul>
+       <li class="text-danger">Sebastián Lelio</li>
+       <li class="text-danger">Pablo Larraín</li>
+       <li class="text-success">Andrés Wood</li>
+      </ul>
+      <p>3) ¿Quién es la protagonista de La Nana?</p>
+      <ul>
+        <li class="text-success">Catalina Saavedra</li>
+        <li class="text-danger">Claudia Celedón</li>
+        <li class="text-danger">Delfina Guzmán</li>
+      </ul><br>
+      <p id="counterNac"></p><br>
+      <a type="button" class="buttonb" onclick="guardarNac()">Volver a Jugar</a>
+      <type="button" class="buttonb" href=index.html>Salir</>
+    </div>
+  </body>
+</html>

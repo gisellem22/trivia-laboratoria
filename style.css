@@ -1,0 +1,76 @@
+body  {
+font-family: 'Indie Flower', cursive;
+font-size: 30px;
+text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+background-image: url(https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/2159546/1160/771/m1/fpnw/wm0/retro_cinema_background-.jpg?1484927425&s=86c903c77167e9a92ebbd7e9ae68820c);
+background-repeat: no-repeat;
+background-size: cover;}
+
+div{
+  margin: 0 auto;
+  box-sizing: border-box;
+  /*border: 1px solid red;*/
+  padding: 1em 2em;
+}
+#entrada{
+  text-align: center;
+  padding: 1em 1em;
+}
+div#categorias{
+  text-align: center;
+  padding: 1em 1em 0.5em 1em;
+}
+div#elegirCategorias{
+  text-align: center;
+  padding: 0.5em 1em 1em 1em;
+}
+
+.buttonInternacional {
+  background-color: #cae800;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+ .buttonNacional {
+  background-color: #0010e8;
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.buttonBandaSonora {
+  background-color: #0be800;
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.buttonb {
+  background-color: #aa1111;
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
